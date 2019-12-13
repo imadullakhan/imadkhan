@@ -34,14 +34,13 @@ public class DynamicDropDown extends SlingAllMethodsServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Reference
-	public   DataBaseConnection dataconnection;
-	
+	public DataBaseConnection dataconnection;
+
 	public static DataBaseConnection dataconnection2;
-	
-   public void init(){
-	   dataconnection2 = dataconnection;
-   }
-	
+
+	public void init() {
+		dataconnection2 = dataconnection;
+	}
 
 	@Reference
 	private DataSourcePool source;
@@ -51,14 +50,11 @@ public class DynamicDropDown extends SlingAllMethodsServlet {
 			throws ServletException, IOException {
 		doPost(request, response);
 
-	} 
-	 
-	
-       
+	}
+
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
 			throws ServletException, IOException {
-				
 
 		response.setContentType("text/html");
 
@@ -76,33 +72,30 @@ public class DynamicDropDown extends SlingAllMethodsServlet {
 			} else {
 				pw.println("Connection Null...!");
 			}
-            
-			
-			 
+
 			ps = conn.prepareStatement("Select * from dropdown");
 
 			rs = ps.executeQuery();
 			List<String> countries = new ArrayList<String>();
 
 			while (rs.next()) {
-				
+
 				pw.println(rs.getString(2) + "<br><br>");
-				
-				countries.add(rs.getString(2));				
+
+				countries.add(rs.getString(2));
 
 			}
-			
+
 			for (String string : countries) {
-				//pw.println(string + "<br><br>");
+				// pw.println(string + "<br><br>");
 			}
-			
-			/*request.setAttribute("Countries", countries);
-			RequestDispatcher rd = request.getRequestDispatcher("/bin/path/demodropdown");
-			rd.forward(request, response);*/
-			//response.sendRedirect("/bin/path/dropDown");
-			
-			
-			
+
+			/*
+			 * request.setAttribute("Countries", countries); RequestDispatcher
+			 * rd = request.getRequestDispatcher("/bin/path/demodropdown");
+			 * rd.forward(request, response);
+			 */
+			// response.sendRedirect("/bin/path/dropDown");
 
 		} catch (Exception e) {
 
