@@ -31,6 +31,7 @@ public class BundleInsertData extends SlingAllMethodsServlet {
 	@Reference
 	ConfigurationAdmin admin;
 	
+	// comments
 	@Override
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
 			throws ServletException, IOException {

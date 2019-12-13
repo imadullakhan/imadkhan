@@ -34,16 +34,13 @@ public class DynamicDropDown extends SlingAllMethodsServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Reference
-	public  DataBaseConnection dataconnection;
+	public   DataBaseConnection dataconnection;
 	
-	@Reference
-	public  DataBaseConnection dataconnection2;
+	public static DataBaseConnection dataconnection2;
 	
-	@Override
-	public void init(){
-		dataconnection2 = dataconnection;
-		
-	}
+   public void init(){
+	   dataconnection2 = dataconnection;
+   }
 	
 
 	@Reference
