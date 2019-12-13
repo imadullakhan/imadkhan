@@ -34,7 +34,7 @@ public class BundleInsertData extends SlingAllMethodsServlet {
 	//This is comment
 	@Override
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
-			throws ServletException, IOException {
+			{
 		
 		response.setContentType("text/html");
 		
