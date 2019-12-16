@@ -21,6 +21,11 @@ import com.adobe.granite.ui.components.ds.ValueMapResource;
 import com.techouts.aemindustry.core.Registration.DataBaseConnection;
 import com.techouts.aemindustry.core.Registration.DynamicDropDown;
 
+/**
+ * @author ImadullaKhan
+ *
+ */
+
 public class SqlDataSourceCountry extends WCMUsePojo {
 
 	private DataBaseConnection dataconnection = DynamicDropDown.dataconnection2;
@@ -46,7 +51,7 @@ public class SqlDataSourceCountry extends WCMUsePojo {
 
 			if (conn != null) {
 				System.out.println("Connection Established");
-				// pw.println("Connction EStablished...");
+				System.out.println("Connction EStablished...");
 			} else {
 				System.out.println("Connection Null...!");
 
