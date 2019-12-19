@@ -51,6 +51,9 @@ public class LoginServlet extends HttpServlet {
 				HttpSession session = req.getSession(true);
 				//pw.println("SessionId" + session.getId());
 				session.setAttribute("username", username);
+				
+				/*Cookie cookie = new Cookie(username, username);
+				  resp.addCookie(cookie);*/
 
 				pw.println("<h2>" + "You Have logged in SuccessFully...." + username + "</h2>");
 				pw.println("<a href = '/content/aemindustry/en/logout.html' style='width:80px;height:80px;padding:12px;background-color:teal;color:#fff;text-decoration:none;border-radius:5px;'>Press Here For Logout</a>");
